@@ -1,5 +1,8 @@
 import math 
 import pandas as pd
+import logging
+
+logging.basicConfig()
 
 df = pd.read_csv("Meteorite_Landings.csv")
 
@@ -10,6 +13,20 @@ df['reclong'] = pd.to_numeric(df['reclong'], errors = "coerce")
 
 
 def circle(latitute1:float, longtitude1:float, latitude2:float, longtitude2:float) -> float:
+    ''' 
+    This function outputs the distance between 2 asteroids based on where they have landed. 
+
+    Arguments: 
+    latitude1: the latitude of the first asteroid
+    longtitude1: the longtitude of the first asteroid
+    latitude2: the latitude of the second asteroid
+    longtitude1: the longtitude of the second asteroid
+
+    Returns: 
+    It returns D which is the distance in km between the two asteroids
+
+    
+    '''
     r = 6371
 
     latitude1, longtitude1,latitude2,longtitude2 = map(math.radians, [latitute1, longtitude1,latitude2,longtitude2])

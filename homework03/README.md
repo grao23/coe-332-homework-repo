@@ -1,5 +1,6 @@
 ##HOMEWORK 3
 
+I have recieved an extension for this assignment from Professor Allen. 
 
 The goal of this directory is to show how to write a Dockerfile which can containerize the files which we have made from the previous homework assignement. 
 

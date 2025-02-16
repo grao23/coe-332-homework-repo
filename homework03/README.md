@@ -1,9 +1,7 @@
-##HOMEWORK 2
+##HOMEWORK 3
 
 
-The goal of this directory is to show summary statitics which we have pulled from the Meteorite_Landings.csv File and output them.
-It is important as it allows us to work with proper python coding practices and allows us to do more of a deep dive data analysis which is associated with the data.
-
+The goal of this directory is to show how to write a Dockerfile which can containerize the files which we have made from the previous homework assignement. 
 
 
 ----Neccessary Data and where to find it
@@ -24,7 +22,26 @@ with open('Meteorite_Landings.csv', 'w') as o:
     csv_dict_writer.writerows(data['meteorite_landings'])
 
 
+To build our image: 
+
+docker build -t <gautamrao>/<ml_data_analysis>:1.0 ./
+
+
+To mount data at runtime: 
+
+docker run -v $(pwd)/ml_data_analysis.py:/code/ml_data_analysis.py \ (do this for each file can be done together as well) 
+
+To run code: 
+
+docker run -v $(pwd)/ml_data_analysis.py:/code/ml_data_analysis.py \ dockerfile python /code/ml_data_analysis.py
+
+
+
 ----File Descriptions:
+
+Dockerfile --> This file goal is containerize the contents of the files below. We first use the FROM function to take the python 3.12 environment and then we start installing our dependecies in Pandas 
+and Pytest using the RUN function. Following this we copy the files from below by using the COPY function to be able to copy them into our data container which we want to run later. Following this we use 
+the RUN function once more to run each file individually inside of the container. 
 
 ml_data_analysis --> This files goal is to print out certain summary data statitics related to the code which we have written. In the code we will see 3 main functions which calcuate the average mass
 of an meteorite in the north/south hemisphere, the average mass of a meteorite in the east/west hemisphere and the great circle algorithm which is imported from a seperate gcd_algorithm.py file.

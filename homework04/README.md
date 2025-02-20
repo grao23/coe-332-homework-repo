@@ -59,10 +59,16 @@ ENV PATH="/code:$PATH"
 How to run the containerized scripts: 
 
 
+use this to get to devolopment environment:
+
+docker run --rm -it -v $PWD/ gautamrao/iss_tracker.py:1.0 /bin/bash
+docker run --rm -it -v $PWD/ gautamrao/test_iss_tracker.py:1.0 /bin/bash
+
+
 
 Expected output: 
 
-The expected output should be of the 3 main functions which are present in the code: 
+The expected output for the iss_tracker.py file should be of the 3 main functions which are present in the code: 
 
 For the first function "date_range" the output would be a single line which contains the range of the dates which are present in the dataset. 
 
@@ -72,3 +78,5 @@ associated with it.
 For the third function "average_speed" the output is 2 lines, one which contains the average speed of the entire dataset, and the second line which 
 has the instatenous speed. 
 
+
+For the test_iss_tracker.py file the expected output includes the program passing a series of 6 test passes which should all be passed. 

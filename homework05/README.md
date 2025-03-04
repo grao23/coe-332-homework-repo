@@ -78,6 +78,7 @@ How to run the containerized scripts:
 use this to get to devolopment environment:
 
 docker run --rm -it -v $PWD/ gautamrao/iss_tracker.py:1.0 /bin/bash
+
 docker run --rm -it -v $PWD/ gautamrao/test_iss_tracker.py:1.0 /bin/bash
 
 

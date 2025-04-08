@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 import redis
 import requests
-import json  # Added for serialization
+import json
 
 app = Flask(__name__)
 redis_client = redis.StrictRedis(host='redis', port=6379, db=0, decode_responses=True)
